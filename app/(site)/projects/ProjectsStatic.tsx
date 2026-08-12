@@ -6,7 +6,16 @@ import automedicsPreview from "@/app/images/automedics-preview-v2.webp"
 import entitledPreview from "@/app/images/entitled-preview-v2.webp"
 import IconSpritePreview from "@/app/images/zero-icon-sprite-preview.jpg"
 import zeroPreview from "@/app/images/react-zero-ui-preview.jpg"
-import vetsChoiceInsurancePreview from "@/images/vets-choice-insurance-preview.webp"
+// TODO: replace placeholders below with real project screenshots
+const mikePreview = bespokePreview
+const writedInPreview = zeroPreview
+const getCommandPreview = iaoPreview
+const generateMyCVPreview = automedicsPreview
+const educMePreview = entitledPreview
+const shopNEatPreview = IconSpritePreview
+const bodyBloomPreview = bespokePreview
+const docFusionPreview = automedicsPreview
+const igLivePreview = iaoPreview
 import { Link } from "@/app/utils/Link"
 import { externalLinks, SITE_SLUGS } from "@/config/siteConfig"
 
@@ -39,64 +48,147 @@ export const STATIC_PROJECTS: StaticProject[] = [
   {
     id: "bespoke",
     src: bespokePreview,
-    alt: "Bespoke Preview",
+    alt: "Lotus Business Preview",
     color: "#024EFC",
-    type: "Automotive Styling Website",
+    type: "Mobile App · Stage",
     text: "See Case Study",
     href: SITE_SLUGS.projectLinks.bespoke,
     dataText: "See Case Study",
-    ariaLabel: "See Bespoke Website Build Case Study",
+    ariaLabel: "See Lotus Business Case Study",
     isExternal: false,
   },
-  {
-    id: "vets-choice",
-    src: vetsChoiceInsurancePreview,
-    alt: "Vets Choice Insurance Preview",
-    color: "#DA961AA5",
-    type: "Pet Insurance Website",
-    text: "View Website",
-    href: externalLinks.vetsChoice,
-    dataText: "View Website",
-    ariaLabel: "View Vets Choice Insurance Website",
-    isExternal: true,
-  },
-  {
-    id: "zero-icon-sprite",
-    src: IconSpritePreview,
-    alt: "Zero-Icon-Sprite Preview",
-    color: "#3B06D1A5",
-    type: "SVG Build Tool",
-    text: "View on GitHub",
-    href: externalLinks.zeroIconSprite,
-    dataText: "View on GitHub",
-    ariaLabel: "View React Zero UI Icon Sprite on GitHub",
-    isExternal: true,
-  },
-
   {
     id: "automedics",
     src: automedicsPreview,
-    alt: "Automedics Preview",
+    alt: "YouAndMe Preview",
     color: "#000000",
-    type: "Automotive Repair Website",
+    type: "Mobile App · Social",
     text: "See Case Study",
     href: SITE_SLUGS.projectLinks.automedics,
     dataText: "See Case Study",
-    ariaLabel: "See Automedics Website Build Case Study",
+    ariaLabel: "See YouAndMe Case Study",
     isExternal: false,
   },
-
   {
     id: "iron-oak",
     src: iaoPreview,
-    alt: "IAO Preview",
+    alt: "Le Focus Preview",
     color: "#13739C",
-    type: "Private Security Website",
+    type: "Media · Actualités",
     text: "See Case Study",
     href: SITE_SLUGS.projectLinks.iao,
     dataText: "See Case Study",
-    ariaLabel: "See Iron & Oak Website Build Case Study",
+    ariaLabel: "See Le Focus Case Study",
     isExternal: false,
+  },
+  // --- Projets supplémentaires ---
+  {
+    id: "mike",
+    src: mikePreview, // TODO: replace with real screenshot
+    alt: "Mike Preview",
+    color: "#1a1a2e",
+    type: "Analyse",
+    text: "Disponible bientôt",
+    href: "#",
+    dataText: "Disponible bientôt",
+    ariaLabel: "Mike - Analyseur de conversations WhatsApp",
+    isExternal: false,
+  },
+  {
+    id: "writedin",
+    src: writedInPreview, // TODO: replace with real screenshot
+    alt: "WritedIn Preview",
+    color: "#0a4fa8",
+    type: "Web App",
+    text: "Ouvrir",
+    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
+    dataText: "Ouvrir",
+    ariaLabel: "WritedIn - Plateforme d'écriture et publication",
+    isExternal: true,
+  },
+  {
+    id: "getcommand",
+    src: getCommandPreview, // TODO: replace with real screenshot
+    alt: "GetCommand Preview",
+    color: "#1a1a1a",
+    type: "Tool",
+    text: "Ouvrir",
+    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
+    dataText: "Ouvrir",
+    ariaLabel: "GetCommand - Outil web de commandes pour développeurs",
+    isExternal: true,
+  },
+  {
+    id: "generatemycv",
+    src: generateMyCVPreview, // TODO: replace with real screenshot
+    alt: "GenerateMyCV Preview",
+    color: "#2b7cff",
+    type: "Productivité",
+    text: "Ouvrir",
+    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
+    dataText: "Ouvrir",
+    ariaLabel: "GenerateMyCV - Générateur de CV en ligne",
+    isExternal: true,
+  },
+  {
+    id: "educme",
+    src: educMePreview, // TODO: replace with real screenshot
+    alt: "EducMe Preview",
+    color: "#0d7d4a",
+    type: "Education",
+    text: "Ouvrir",
+    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
+    dataText: "Ouvrir",
+    ariaLabel: "EducMe - Plateforme éducative",
+    isExternal: true,
+  },
+  {
+    id: "shopneat",
+    src: shopNEatPreview, // TODO: replace with real screenshot
+    alt: "Shop'n eat Preview",
+    color: "#e85d04",
+    type: "Food",
+    text: "Ouvrir",
+    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
+    dataText: "Ouvrir",
+    ariaLabel: "Shop'n eat - Expérience web restauration et achat",
+    isExternal: true,
+  },
+  {
+    id: "bodybloom",
+    src: bodyBloomPreview, // TODO: replace with real screenshot
+    alt: "BodyBloom Preview",
+    color: "#7b2d8b",
+    type: "Mobile App",
+    text: "Voir l'image",
+    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
+    dataText: "Voir l'image",
+    ariaLabel: "BodyBloom - Application mobile",
+    isExternal: true,
+  },
+  {
+    id: "docfusion",
+    src: docFusionPreview, // TODO: replace with real screenshot
+    alt: "DocFusion Preview",
+    color: "#1a3a5c",
+    type: "Mobile App",
+    text: "Voir l'image",
+    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
+    dataText: "Voir l'image",
+    ariaLabel: "DocFusion - Assistant de gestion documentaire",
+    isExternal: true,
+  },
+  {
+    id: "iglive",
+    src: igLivePreview, // TODO: replace with real screenshot
+    alt: "IG-Live Preview",
+    color: "#4a1a8c",
+    type: "Mobile App",
+    text: "Voir l'image",
+    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
+    dataText: "Voir l'image",
+    ariaLabel: "IG-Live - Application mobile",
+    isExternal: true,
   },
   {
     id: "entitled",

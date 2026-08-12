@@ -1,4 +1,5 @@
-import { Icon } from "../Icon"
+import Image from "next/image"
+import logo from "@/app/images/logo.webp"
 import { Link } from "../../utils/Link"
 import { MobileMenuButton } from "./MobileMenuButton"
 import { MobileMenu } from "./MobileMenu"
@@ -19,7 +20,7 @@ export const TopBarV2: React.FC = () => {
           <div className="flex items-center gap-4 px-4 py-3 md:gap-8 md:py-2.5">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 font-medium text-nowrap">
-              <Icon name="serbyte" height={24} width={24} className="rounded shadow-md" />
+              <Image src={logo} alt="Issa MIGAN" height={24} width={24} className="rounded shadow-md" />
               Issa MIGAN
             </Link>
 
