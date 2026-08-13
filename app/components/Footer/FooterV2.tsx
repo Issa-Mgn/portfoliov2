@@ -10,10 +10,27 @@ export const socialLinks = [
   {
     href: SITE_NAP.profiles.github,
     icon: "github",
+    label: "GitHub",
+  },
+  {
+    href: SITE_NAP.profiles.linkedIn,
+    icon: "linkedin",
+    label: "LinkedIn",
+  },
+  {
+    href: SITE_NAP.profiles.facebook,
+    icon: "facebook",
+    label: "Facebook",
+  },
+  {
+    href: SITE_NAP.profiles.instagram,
+    icon: "instagram",
+    label: "Instagram",
   },
   {
     href: SITE_NAP.profiles.whatsapp,
     icon: "whatsapp",
+    label: "WhatsApp",
   },
 ]
 
@@ -68,7 +85,7 @@ export const FooterV2: React.FC = () => {
               <span className="text-[#b8b8b8]">Based in </span> Cotonou, Bénin 🇧🇯
             </h3>
           </div>
-          <span className="text-[#b8b8b8]">© 2025 Issa MIGAN</span>
+          <span className="text-[#b8b8b8]">© 2026 Issa MIGAN</span>
         </div>
         <h2 className="large-brand-text absolute -bottom-16 left-0 flex w-full items-center justify-center whitespace-nowrap text-white md:text-[180px] lg:text-[240px]">
           Issa MIGAN

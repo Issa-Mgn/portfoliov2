@@ -44,12 +44,12 @@ export const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
           initialPosition={70}
           before={
             <>
-              <Image src={heroBefore} alt={beforeAltText} fill className="hidden rounded-xl object-cover object-top lg:block" priority sizes="80vw" />
+              <Image src={heroBefore} alt={beforeAltText} fill className="hidden rounded-xl object-contain object-center lg:block" priority sizes="80vw" />
               <Image
                 src={heroBeforeMobile}
                 alt={beforeMobileAltText}
                 fill
-                className="block rounded-xl object-cover object-top lg:hidden"
+                className="block rounded-xl object-contain object-center lg:hidden"
                 priority
                 sizes="80vw"
               />
@@ -66,7 +66,7 @@ export const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
                 rel="nofollow noopener"
               />
             ) : (
-              heroAfter && <Image src={heroAfter} alt={afterAltText} fill className="rounded-xl object-cover object-top" priority sizes="80vw" />
+              heroAfter && <Image src={heroAfter} alt={afterAltText} fill className="rounded-xl object-contain object-center" priority sizes="80vw" />
             )
           }
         />

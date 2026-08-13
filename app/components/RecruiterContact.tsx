@@ -41,19 +41,22 @@ export const RecruiterContact: React.FC = () => {
             </Text>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4 max-lg:justify-center">
+          <div className="flex flex-wrap items-center gap-3 max-lg:justify-center">
             <BlackButtonLink href={`mailto:${SITE_NAP.email}`}>
               <Mail height={18} width={18} className="h-[18px] w-[18px] text-white" />
               M&apos;écrire
             </BlackButtonLink>
-
             <WhiteButtonLink href={SITE_NAP.profiles.whatsapp}>
-              <Icon name="github" height={18} width={18} className="h-[18px] w-[18px]" />
+              <Icon name="whatsapp" height={18} width={18} className="h-[18px] w-[18px]" />
               WhatsApp
             </WhiteButtonLink>
             <WhiteButtonLink href={SITE_NAP.profiles.github}>
               <Icon name="github" height={18} width={18} className="h-[18px] w-[18px]" />
               GitHub
+            </WhiteButtonLink>
+            <WhiteButtonLink href={SITE_NAP.profiles.linkedIn}>
+              <Icon name="linkedin" height={18} width={18} className="h-[18px] w-[18px]" />
+              LinkedIn
             </WhiteButtonLink>
           </div>
         </MotionDiv>
