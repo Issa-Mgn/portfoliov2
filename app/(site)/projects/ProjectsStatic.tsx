@@ -1,23 +1,28 @@
-import { StaticImageData } from "next/image"
+import Image, { StaticImageData } from "next/image"
 import { Card } from "@/app/components/ProjectCard/Card"
-import iaoPreview from "@/app/images/iao-preview-v2.webp"
-import bespokePreview from "@/app/images/bespoke-preview-v2.webp"
-import automedicsPreview from "@/app/images/automedics-preview-v2.webp"
-import entitledPreview from "@/app/images/entitled-preview-v2.webp"
-import IconSpritePreview from "@/app/images/zero-icon-sprite-preview.jpg"
-import zeroPreview from "@/app/images/react-zero-ui-preview.jpg"
-// TODO: replace placeholders below with real project screenshots
-const mikePreview = bespokePreview
-const writedInPreview = zeroPreview
-const getCommandPreview = iaoPreview
-const generateMyCVPreview = automedicsPreview
-const educMePreview = entitledPreview
-const shopNEatPreview = IconSpritePreview
-const bodyBloomPreview = bespokePreview
-const docFusionPreview = automedicsPreview
-const igLivePreview = iaoPreview
 import { Link } from "@/app/utils/Link"
-import { externalLinks, SITE_SLUGS } from "@/config/siteConfig"
+import { externalLinks, SITE_SLUGS, SITE_NAP } from "@/config/siteConfig"
+import { Icon } from "@/app/components/Icon"
+
+// Cover images
+import lotusbusinessPreview from "@/app/images/lotusbusiness.webp"
+import writedInPreview from "@/app/images/writedin.webp"
+import mikePreview from "@/app/images/mike.webp"
+import okazPreview from "@/app/images/okaz.webp"
+import getcommandPreview from "@/app/images/getcommand.webp"
+import lefocusPreview from "@/app/images/lefocus.webp"
+import generatemycvPreview from "@/app/images/generatemycv.webp"
+import educmePreview from "@/app/images/educme.webp"
+import connectPreview from "@/app/images/connect.webp"
+import shopeatPreview from "@/app/images/shop-eat.webp"
+import vitiligocommunityPreview from "@/app/images/vitiligocommunity.webp"
+import bodybloomPreview from "@/app/images/bodybloom.webp"
+import docfusionPreview from "@/app/images/docfusion.webp"
+import youandmePreview from "@/app/images/youandme.webp"
+import todolistPreview from "@/app/images/todolist.webp"
+import emilienPreview from "@/app/images/emilien.webp"
+import marketplacePreview from "@/app/images/marketplace.webp"
+import iglivePreview from "@/app/images/iglive.webp"
 
 type StaticProject = {
   id: string
@@ -27,213 +32,313 @@ type StaticProject = {
   type: string
   text: string
   href: string
-  dataText: string
-  ariaLabel: string
   isExternal: boolean
+  ariaLabel: string
+  dataText: string  // alias for carousel compatibility
 }
 
-export const STATIC_PROJECTS: StaticProject[] = [
+const RECENT_PROJECTS: StaticProject[] = [
   {
-    id: "react-zero-ui",
-    src: zeroPreview,
-    alt: "React-Zero-UI - Preview",
-    color: "#3B06D1",
-    type: "Zero Re-Render State Library",
-    text: "View on GitHub",
-    href: externalLinks.zeroCore,
-    dataText: "View on GitHub",
-    ariaLabel: "View React Zero UI on GitHub",
-    isExternal: true,
-  },
-  {
-    id: "bespoke",
-    src: bespokePreview,
-    alt: "Lotus Business Preview",
+    id: "lotusbusiness",
+    src: lotusbusinessPreview,
+    alt: "Lotus Business",
     color: "#024EFC",
     type: "Mobile App · Stage",
-    text: "See Case Study",
-    href: SITE_SLUGS.projectLinks.bespoke,
-    dataText: "See Case Study",
-    ariaLabel: "See Lotus Business Case Study",
+    text: "Voir le projet",
+    dataText: "Voir le projet",
+    href: SITE_SLUGS.projectLinks.lotusbusiness,
     isExternal: false,
-  },
-  {
-    id: "automedics",
-    src: automedicsPreview,
-    alt: "YouAndMe Preview",
-    color: "#000000",
-    type: "Mobile App · Social",
-    text: "See Case Study",
-    href: SITE_SLUGS.projectLinks.automedics,
-    dataText: "See Case Study",
-    ariaLabel: "See YouAndMe Case Study",
-    isExternal: false,
-  },
-  {
-    id: "iron-oak",
-    src: iaoPreview,
-    alt: "Le Focus Preview",
-    color: "#13739C",
-    type: "Media · Actualités",
-    text: "See Case Study",
-    href: SITE_SLUGS.projectLinks.iao,
-    dataText: "See Case Study",
-    ariaLabel: "See Le Focus Case Study",
-    isExternal: false,
-  },
-  // --- Projets supplémentaires ---
-  {
-    id: "mike",
-    src: mikePreview, // TODO: replace with real screenshot
-    alt: "Mike Preview",
-    color: "#1a1a2e",
-    type: "Analyse",
-    text: "Disponible bientôt",
-    href: "#",
-    dataText: "Disponible bientôt",
-    ariaLabel: "Mike - Analyseur de conversations WhatsApp",
-    isExternal: false,
+    ariaLabel: "Voir Lotus Business",
   },
   {
     id: "writedin",
-    src: writedInPreview, // TODO: replace with real screenshot
-    alt: "WritedIn Preview",
+    src: writedInPreview,
+    alt: "WritedIn",
     color: "#0a4fa8",
-    type: "Web App",
+    type: "Web App · IA",
     text: "Ouvrir",
-    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
     dataText: "Ouvrir",
-    ariaLabel: "WritedIn - Plateforme d'écriture et publication",
+    href: externalLinks.writedin,
     isExternal: true,
+    ariaLabel: "Ouvrir WritedIn",
   },
   {
-    id: "getcommand",
-    src: getCommandPreview, // TODO: replace with real screenshot
-    alt: "GetCommand Preview",
-    color: "#1a1a1a",
-    type: "Tool",
-    text: "Ouvrir",
-    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
-    dataText: "Ouvrir",
-    ariaLabel: "GetCommand - Outil web de commandes pour développeurs",
-    isExternal: true,
-  },
-  {
-    id: "generatemycv",
-    src: generateMyCVPreview, // TODO: replace with real screenshot
-    alt: "GenerateMyCV Preview",
-    color: "#2b7cff",
-    type: "Productivité",
-    text: "Ouvrir",
-    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
-    dataText: "Ouvrir",
-    ariaLabel: "GenerateMyCV - Générateur de CV en ligne",
-    isExternal: true,
-  },
-  {
-    id: "educme",
-    src: educMePreview, // TODO: replace with real screenshot
-    alt: "EducMe Preview",
-    color: "#0d7d4a",
-    type: "Education",
-    text: "Ouvrir",
-    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
-    dataText: "Ouvrir",
-    ariaLabel: "EducMe - Plateforme éducative",
-    isExternal: true,
-  },
-  {
-    id: "shopneat",
-    src: shopNEatPreview, // TODO: replace with real screenshot
-    alt: "Shop'n eat Preview",
-    color: "#e85d04",
-    type: "Food",
-    text: "Ouvrir",
-    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
-    dataText: "Ouvrir",
-    ariaLabel: "Shop'n eat - Expérience web restauration et achat",
-    isExternal: true,
-  },
-  {
-    id: "bodybloom",
-    src: bodyBloomPreview, // TODO: replace with real screenshot
-    alt: "BodyBloom Preview",
-    color: "#7b2d8b",
-    type: "Mobile App",
-    text: "Voir l'image",
-    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
-    dataText: "Voir l'image",
-    ariaLabel: "BodyBloom - Application mobile",
-    isExternal: true,
-  },
-  {
-    id: "docfusion",
-    src: docFusionPreview, // TODO: replace with real screenshot
-    alt: "DocFusion Preview",
-    color: "#1a3a5c",
-    type: "Mobile App",
-    text: "Voir l'image",
-    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
-    dataText: "Voir l'image",
-    ariaLabel: "DocFusion - Assistant de gestion documentaire",
-    isExternal: true,
-  },
-  {
-    id: "iglive",
-    src: igLivePreview, // TODO: replace with real screenshot
-    alt: "IG-Live Preview",
+    id: "mike",
+    src: mikePreview,
+    alt: "Mike",
     color: "#4a1a8c",
-    type: "Mobile App",
-    text: "Voir l'image",
-    href: "https://github.com/Issa-Mgn", // TODO: replace with real link
-    dataText: "Voir l'image",
-    ariaLabel: "IG-Live - Application mobile",
+    type: "Web App · Analyse IA",
+    text: "Ouvrir",
+    dataText: "Ouvrir",
+    href: externalLinks.mike,
     isExternal: true,
+    ariaLabel: "Ouvrir Mike",
   },
   {
-    id: "entitled",
-    src: entitledPreview,
-    alt: "Entitled Preview",
-    color: "#DA961AA5",
-    type: "Event Management Web App",
-    text: "View Website",
-    href: externalLinks.entitled,
-    dataText: "View Website",
-    ariaLabel: "View Entitled Website",
+    id: "okaz",
+    src: okazPreview,
+    alt: "Okaz",
+    color: "#1a7a4a",
+    type: "Mobile App · Covoiturage",
+    text: "Voir sur GitHub",
+    dataText: "Voir sur GitHub",
+    href: externalLinks.okaz,
     isExternal: true,
+    ariaLabel: "Voir Okaz sur GitHub",
   },
 ]
 
+const SITE_PROJECTS: StaticProject[] = [
+  {
+    id: "getcommand",
+    src: getcommandPreview,
+    alt: "GetCommand",
+    color: "#1a1a1a",
+    type: "Tool · Dev",
+    text: "Ouvrir",
+    dataText: "Ouvrir",
+    href: externalLinks.getcommand,
+    isExternal: true,
+    ariaLabel: "Ouvrir GetCommand",
+  },
+  {
+    id: "lefocus",
+    src: lefocusPreview,
+    alt: "Le Focus",
+    color: "#13739C",
+    type: "Média · Actualités",
+    text: "Ouvrir",
+    dataText: "Ouvrir",
+    href: externalLinks.lefocus,
+    isExternal: true,
+    ariaLabel: "Ouvrir Le Focus",
+  },
+  {
+    id: "generatemycv",
+    src: generatemycvPreview,
+    alt: "GenerateMyCV",
+    color: "#2b7cff",
+    type: "Productivité · Web App",
+    text: "Ouvrir",
+    dataText: "Ouvrir",
+    href: externalLinks.generatemycv,
+    isExternal: true,
+    ariaLabel: "Ouvrir GenerateMyCV",
+  },
+  {
+    id: "educme",
+    src: educmePreview,
+    alt: "EducMe",
+    color: "#0d7d4a",
+    type: "Éducation · Web App",
+    text: "Ouvrir",
+    dataText: "Ouvrir",
+    href: externalLinks.educme,
+    isExternal: true,
+    ariaLabel: "Ouvrir EducMe",
+  },
+  {
+    id: "connect",
+    src: connectPreview,
+    alt: "Connect",
+    color: "#e85d04",
+    type: "Tool · SQL & IA",
+    text: "Voir sur GitHub",
+    dataText: "Voir sur GitHub",
+    href: externalLinks.connect,
+    isExternal: true,
+    ariaLabel: "Voir Connect sur GitHub",
+  },
+  {
+    id: "shopeat",
+    src: shopeatPreview,
+    alt: "Shop-eat",
+    color: "#e85d04",
+    type: "Food · E-commerce",
+    text: "Ouvrir",
+    dataText: "Ouvrir",
+    href: externalLinks.shopeat,
+    isExternal: true,
+    ariaLabel: "Ouvrir Shop-eat",
+  },
+  {
+    id: "vitiligocommunity",
+    src: vitiligocommunityPreview,
+    alt: "VitiligoCommunity",
+    color: "#7b2d8b",
+    type: "Communauté · Web App",
+    text: "Ouvrir",
+    dataText: "Ouvrir",
+    href: externalLinks.vitiligocommunity,
+    isExternal: true,
+    ariaLabel: "Ouvrir VitiligoCommunity",
+  },
+]
+
+const APP_PROJECTS: StaticProject[] = [
+  {
+    id: "bodybloom",
+    src: bodybloomPreview,
+    alt: "BodyBloom",
+    color: "#7b2d8b",
+    type: "Mobile App · Fitness",
+    text: "Voir sur GitHub",
+    dataText: "Voir sur GitHub",
+    href: externalLinks.bodybloom,
+    isExternal: true,
+    ariaLabel: "Voir BodyBloom sur GitHub",
+  },
+  {
+    id: "docfusion",
+    src: docfusionPreview,
+    alt: "DocFusion",
+    color: "#1a3a5c",
+    type: "Mobile App · Documents",
+    text: "Voir sur GitHub",
+    dataText: "Voir sur GitHub",
+    href: externalLinks.docfusion,
+    isExternal: true,
+    ariaLabel: "Voir DocFusion sur GitHub",
+  },
+  {
+    id: "youandme",
+    src: youandmePreview,
+    alt: "YouAndMe",
+    color: "#3B06D1",
+    type: "Mobile App · Social",
+    text: "Voir sur GitHub",
+    dataText: "Voir sur GitHub",
+    href: externalLinks.youandme,
+    isExternal: true,
+    ariaLabel: "Voir YouAndMe sur GitHub",
+  },
+  {
+    id: "todolist",
+    src: todolistPreview,
+    alt: "ToDoList",
+    color: "#024EFC",
+    type: "Mobile App · Productivité",
+    text: "Voir sur GitHub",
+    dataText: "Voir sur GitHub",
+    href: externalLinks.todolist,
+    isExternal: true,
+    ariaLabel: "Voir ToDoList sur GitHub",
+  },
+  {
+    id: "emilien",
+    src: emilienPreview,
+    alt: "Emilien",
+    color: "#13739C",
+    type: "Mobile App · Notes",
+    text: "Voir sur GitHub",
+    dataText: "Voir sur GitHub",
+    href: externalLinks.emilien,
+    isExternal: true,
+    ariaLabel: "Voir Emilien sur GitHub",
+  },
+  {
+    id: "marketplace",
+    src: marketplacePreview,
+    alt: "Marketplace",
+    color: "#DA961A",
+    type: "Mobile App · E-commerce",
+    text: "Voir sur GitHub",
+    dataText: "Voir sur GitHub",
+    href: externalLinks.marketplace,
+    isExternal: true,
+    ariaLabel: "Voir Marketplace sur GitHub",
+  },
+  {
+    id: "iglive",
+    src: iglivePreview,
+    alt: "IG-Live",
+    color: "#4a1a8c",
+    type: "Mobile App · Réseau social",
+    text: "Voir sur GitHub",
+    dataText: "Voir sur GitHub",
+    href: externalLinks.iglive,
+    isExternal: true,
+    ariaLabel: "Voir IG-Live sur GitHub",
+  },
+]
+
+// Flat list used by MoreProjectsSection carousel
+export const STATIC_PROJECTS: StaticProject[] = [...RECENT_PROJECTS, ...SITE_PROJECTS, ...APP_PROJECTS]
+
+function ProjectGrid({ projects }: { projects: StaticProject[] }) {
+  return (
+    <div className="relative z-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project) => {
+        if (project.isExternal) {
+          return (
+            <a
+              key={project.id}
+              href={project.href}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              aria-label={project.ariaLabel}
+            >
+              <Card src={project.src} alt={project.alt} color={project.color} type={project.type} reveal={false} text={project.text} />
+            </a>
+          )
+        }
+        return (
+          <Link key={project.id} href={project.href} aria-label={project.ariaLabel}>
+            <Card src={project.src} alt={project.alt} color={project.color} type={project.type} reveal={false} text={project.text} />
+          </Link>
+        )
+      })}
+    </div>
+  )
+}
+
+function SectionTitle({ label, title }: { label: string; title: string }) {
+  return (
+    <div className="flex flex-col gap-1 pb-6">
+      <span className="text-xs font-medium tracking-widest text-slate-400 uppercase">{label}</span>
+      <h2 className="text-2xl font-medium tracking-tight text-slate-900 md:text-3xl">{title}</h2>
+    </div>
+  )
+}
+
 export const ProjectsStatic: React.FC = () => {
   return (
-    <section className="border-t border-slate-200">
-      <div className="inside-container-small">
-        <div className="relative z-4 grid grid-cols-1 grid-rows-1 gap-4 md:grid-cols-2 md:grid-rows-2">
-          {STATIC_PROJECTS.map((project) => {
-            const Tag = project.isExternal ? "a" : Link
-            const tagProps = project.isExternal
-              ? {
-                  href: project.href,
-                  target: "_blank",
-                  rel: "nofollow noopener",
-                  "data-text": project.dataText,
-                  "aria-label": project.ariaLabel,
-                }
-              : {
-                  href: project.href,
-                  "data-text": project.dataText,
-                  "aria-label": project.ariaLabel,
-                  prefetch: true,
-                }
+    <div className="border-t border-slate-200">
+      <div className="inside-container-small flex flex-col gap-20">
 
-            return (
-              <Tag key={project.id} {...tagProps}>
-                <Card src={project.src} alt={project.alt} color={project.color} type={project.type} reveal={false} text={project.text} />
-              </Tag>
-            )
-          })}
+        {/* Récents */}
+        <section>
+          <SectionTitle label="/ récents" title="Projets récents" />
+          <ProjectGrid projects={RECENT_PROJECTS} />
+        </section>
+
+        {/* Sites */}
+        <section>
+          <SectionTitle label="/ sites" title="Sites & Web Apps" />
+          <ProjectGrid projects={SITE_PROJECTS} />
+        </section>
+
+        {/* Apps */}
+        <section>
+          <SectionTitle label="/ apps" title="Applications mobiles" />
+          <ProjectGrid projects={APP_PROJECTS} />
+        </section>
+
+        {/* GitHub CTA */}
+        <div className="flex flex-col items-center gap-4 border-t border-slate-200 pt-12 pb-4 text-center">
+          <p className="text-sm text-slate-500">Et beaucoup d&apos;autres projets disponibles sur GitHub</p>
+          <a
+            href={SITE_NAP.profiles.github}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-800 shadow-sm transition-all hover:shadow-md"
+          >
+            <Icon name="github" height={16} width={16} />
+            Voir tous les projets sur GitHub
+          </a>
         </div>
+
       </div>
-    </section>
+    </div>
   )
 }

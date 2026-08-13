@@ -46,6 +46,11 @@ export const SITE_SLUGS = {
   contact: "/#contact",
   about: "/#about-issa-migan",
   projectLinks: {
+    lotusbusiness: "/projects/lotusbusiness",
+    writedin: "/projects/writedin",
+    mike: "/projects/mike",
+    okaz: "/projects/okaz",
+    // legacy slugs kept for backward compat
     iao: "/projects/iron-and-oak",
     automedics: "/projects/automedics",
     bespoke: "/projects/bespoke",
@@ -53,10 +58,28 @@ export const SITE_SLUGS = {
 } as const
 
 export const externalLinks = {
-  vetsChoice: "",
+  github: "https://github.com/Issa-Mgn",
   zeroIconSprite: "https://github.com/react-zero-ui/icon-sprite",
   zeroCore: "https://github.com/react-zero-ui/core",
-  entitled: "",
+  // project live links
+  lotusbusiness: "https://lotusbusinesses.com",
+  writedin: "https://writedin.netlify.app",
+  mike: "https://quepensemike.netlify.app",
+  okaz: "https://github.com/Issa-Mgn",
+  getcommand: "https://getcommand.netlify.app",
+  lefocus: "https://lefocus.netlify.app",
+  generatemycv: "https://generatemycv.netlify.app",
+  educme: "https://educ-me.netlify.app",
+  connect: "https://github.com/Issa-Mgn",
+  shopeat: "https://shop-eat.netlify.app",
+  vitiligocommunity: "https://vitiligocommunity.netlify.app",
+  bodybloom: "https://github.com/Issa-Mgn",
+  docfusion: "https://github.com/Issa-Mgn",
+  youandme: "https://github.com/Issa-Mgn",
+  todolist: "https://github.com/Issa-Mgn",
+  emilien: "https://github.com/Issa-Mgn",
+  marketplace: "https://github.com/Issa-Mgn",
+  iglive: "https://github.com/Issa-Mgn",
 } as const
 
 const flattenSlugs = (obj: Record<string, string | Record<string, string>>): string[] => {

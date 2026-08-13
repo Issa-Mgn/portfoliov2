@@ -1,18 +1,18 @@
 "use client"
 import { AnimatedCard, HeroOffset } from "./ProjectCard/AnimatedCard"
-import iaoPreview from "@/app/images/iao-preview-v2.webp"
-import bespokePreview from "@/app/images/bespoke-preview-v2.webp"
-import automedicsPreview from "@/app/images/automedics-preview-v2.webp"
-import reactZeroUIPreview from "@/app/images/react-zero-ui-preview.jpg"
+import lotusbusinessPreview from "@/app/images/lotusbusiness.webp"
+import writedInPreview from "@/app/images/writedin.webp"
+import mikePreview from "@/app/images/mike.webp"
+import okazPreview from "@/app/images/okaz.webp"
 import clsx from "clsx"
 import { useOffset } from "../hooks/useOffset"
 import { useIsMobile } from "../hooks/useMediaQuery"
 import { useRef, useEffect } from "react"
 import { useScroll, useSpring } from "motion/react"
 import { useUI } from "@react-zero-ui/core"
-import { externalLinks } from "@/config/siteConfig"
+import { externalLinks, SITE_SLUGS } from "@/config/siteConfig"
 
-const ids = ["automedics", "react-zero-ui", "iron-and-oak", "bespoke"]
+const ids = ["lotusbusiness", "writedin", "mike", "okaz"]
 
 export function ProjectsGrid({ className }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -31,21 +31,21 @@ export function ProjectsGrid({ className }: { className?: string }) {
   const progress = useSpring(scrollYProgress, { stiffness, damping })
 
   const OFFSET_TUNING: Record<string, Partial<HeroOffset>> = {
-    "react-zero-ui": { rot: 9, s: responsiveScale, dx: isMobile ? -220 : -30, dy: isMobile ? -120 : -40 },
-    "iron-and-oak": { rot: -5, s: responsiveScale, dx: isMobile ? -230 : -60, dy: isMobile ? -130 : -40 },
-    automedics: { rot: 5, s: responsiveScale, dx: isMobile ? -225 : -45, dy: isMobile ? -130 : -25 },
-    bespoke: { rot: 12, s: responsiveScale, dx: isMobile ? -230 : -50, dy: isMobile ? -110 : -10 },
+    lotusbusiness: { rot: 5,  s: responsiveScale, dx: isMobile ? -225 : -45, dy: isMobile ? -130 : -25 },
+    writedin:      { rot: 9,  s: responsiveScale, dx: isMobile ? -220 : -30, dy: isMobile ? -120 : -40 },
+    mike:          { rot: -5, s: responsiveScale, dx: isMobile ? -230 : -60, dy: isMobile ? -130 : -40 },
+    okaz:          { rot: 12, s: responsiveScale, dx: isMobile ? -230 : -50, dy: isMobile ? -110 : -10 },
   }
 
   const offsets = Object.fromEntries(
     ids.map((id) => {
-      const base = rawOffsets[id]
+      const base = rawOffsets[id] ?? { x: 0, y: 0 }
       const t = OFFSET_TUNING[id]
       return [
         id,
         {
-          x: base.x! + t.dx!,
-          y: base.y! + t.dy!,
+          x: (base.x ?? 0) + t.dx!,
+          y: (base.y ?? 0) + t.dy!,
           rot: t.rot!,
           s: t.s ?? 1,
         },
@@ -57,62 +57,63 @@ export function ProjectsGrid({ className }: { className?: string }) {
   useEffect(() => {
     const unsubscribe = progress.on("change", (latest) => {
       if (latest >= triggerProgress) {
-        setReveal("true") // Reveal ON
+        setReveal("true")
       } else {
-        setReveal("false") // Reveal OFF
+        setReveal("false")
       }
     })
-
     return unsubscribe
   }, [progress, setReveal, triggerProgress])
+
   return (
     <section id="projects-grid" className={clsx("relative scroll-mt-36", className)} ref={ref}>
       <div className="relative z-4 grid grid-cols-1 grid-rows-1 gap-4 md:grid-cols-2 md:grid-rows-2">
         <AnimatedCard
-          key={"react-zero-ui"}
-          src={reactZeroUIPreview}
-          alt={"React-Zero-UI - Preview"}
-          offset={offsets["react-zero-ui"]}
-          gridId="react-zero-ui"
-          color="#3B06D1"
-          type="Zero Re-Render State Library"
-          progress={progress}
-          href={externalLinks.zeroCore}
-          dataText="View on GitHub"
-        />
-        <AnimatedCard
-          key="Bespoke"
-          src={bespokePreview}
-          alt={"Bespoke Preview"}
-          offset={offsets["bespoke"]}
-          gridId="bespoke"
+          key="lotusbusiness"
+          src={lotusbusinessPreview}
+          alt="Lotus Business Preview"
+          offset={offsets["lotusbusiness"]}
+          gridId="lotusbusiness"
           color="#024EFC"
-          type="Automotive Styling"
+          type="Mobile App · Gestion commerciale"
           progress={progress}
-          dataText="View Case Study"
-        />
-
-        <AnimatedCard
-          key="Automedics"
-          src={automedicsPreview}
-          alt={"Automedics Preview"}
-          offset={offsets["automedics"]}
-          gridId="automedics"
-          color="#DA961A"
-          type="Automotive Repair"
-          progress={progress}
-          dataText="View Case Study"
+          dataText="Voir le projet"
         />
         <AnimatedCard
-          key={"IAO"}
-          src={iaoPreview}
-          alt={"IAO Preview"}
-          offset={offsets["iron-and-oak"]}
-          gridId="iron-and-oak"
-          color="#13739C"
-          type="Private Security"
+          key="writedin"
+          src={writedInPreview}
+          alt="WritedIn Preview"
+          offset={offsets["writedin"]}
+          gridId="writedin"
+          color="#0a4fa8"
+          type="Web App · IA & Écriture"
           progress={progress}
-          dataText="View Case Study"
+          href={externalLinks.writedin}
+          dataText="Ouvrir le site"
+        />
+        <AnimatedCard
+          key="mike"
+          src={mikePreview}
+          alt="Mike Preview"
+          offset={offsets["mike"]}
+          gridId="mike"
+          color="#4a1a8c"
+          type="Web App · Analyse IA"
+          progress={progress}
+          href={externalLinks.mike}
+          dataText="Ouvrir le site"
+        />
+        <AnimatedCard
+          key="okaz"
+          src={okazPreview}
+          alt="Okaz Preview"
+          offset={offsets["okaz"]}
+          gridId="okaz"
+          color="#1a7a4a"
+          type="Mobile App · Covoiturage"
+          progress={progress}
+          href={externalLinks.okaz}
+          dataText="Voir sur GitHub"
         />
       </div>
     </section>

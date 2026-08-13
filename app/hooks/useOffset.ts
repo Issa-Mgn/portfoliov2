@@ -4,19 +4,19 @@ import { debounce } from "../utils/debounce"
 import { useIsoMorphicEffect } from "./useIsoMorphicEffect"
 
 const initialOffsets: Record<string, Partial<HeroOffset>> = {
-  automedics: {
+  lotusbusiness: {
     x: 459.296875,
     y: -980.328125,
   },
-  "react-zero-ui": {
+  writedin: {
     x: 459.296875,
     y: -748,
   },
-  "iron-and-oak": {
+  mike: {
     x: 118.796875,
     y: -748,
   },
-  bespoke: {
+  okaz: {
     x: 118.796875,
     y: -980.328125,
   },
