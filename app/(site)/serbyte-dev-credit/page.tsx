@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 
-const PORTFOLIO_URL = "https://issa-migan.dev"
+const PORTFOLIO_URL = "https://portfoliov2-two-henna.vercel.app/"
 const CREDIT_PATH = "/serbyte-dev-credit"
 
 export const metadata: Metadata = {

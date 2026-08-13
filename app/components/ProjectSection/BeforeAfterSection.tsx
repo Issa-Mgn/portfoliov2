@@ -11,13 +11,15 @@ const BeforeAfterSlider = dynamic(() => import("@/app/ui/BeforeAfterSlider").the
   loading: () => <BeforeAfterSliderSkeleton />,
 })
 
+type ImgSrc = StaticImageData | string
+
 interface BeforeAfterSectionProps {
-  heroBefore: StaticImageData
+  heroBefore: ImgSrc
   beforeAltText: string
-  heroBeforeMobile: StaticImageData
+  heroBeforeMobile: ImgSrc
   beforeMobileAltText: string
   iframe?: string
-  heroAfter?: StaticImageData
+  heroAfter?: ImgSrc
   afterAltText: string
 }
 
@@ -56,7 +58,7 @@ export const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
           after={
             iframe ? (
               <iframe
-                title="Bespoke Hero After"
+                title="Before After"
                 src={iframe}
                 className="h-full w-full rounded-xl border-0 bg-white"
                 scrolling="no"

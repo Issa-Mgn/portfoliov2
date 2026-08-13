@@ -88,8 +88,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           color="#0a4fa8"
           type="Web App · IA & Écriture"
           progress={progress}
-          href={externalLinks.writedin}
-          dataText="Ouvrir le site"
+          dataText="Voir le projet"
         />
         <AnimatedCard
           key="mike"
@@ -100,8 +99,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           color="#4a1a8c"
           type="Web App · Analyse IA"
           progress={progress}
-          href={externalLinks.mike}
-          dataText="Ouvrir le site"
+          dataText="Voir le projet"
         />
         <AnimatedCard
           key="okaz"
@@ -112,8 +110,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           color="#1a7a4a"
           type="Mobile App · Covoiturage"
           progress={progress}
-          href={externalLinks.okaz}
-          dataText="Voir sur GitHub"
+          dataText="Voir le projet"
         />
       </div>
     </section>
