@@ -1,4 +1,4 @@
-# [Issa MIGAN — Portfolio FullStack Web & Mobile](https://issa-migan.dev)
+# [Issa MIGAN — Portfolio FullStack Web & Mobile](https://portfoliov2-two-henna.vercel.app/)
 
 > Développeur FullStack Web & Mobile · Cotonou, Bénin 🇧🇯 · Disponible en freelance / remote
 
@@ -57,7 +57,7 @@ Chaque push sur `main` redéploie automatiquement.
 **Email :** [miganissa334@gmail.com](mailto:miganissa334@gmail.com)  
 **WhatsApp :** [+229 01 56 10 34 58](https://wa.me/2290156103458)  
 **GitHub :** [github.com/Issa-Mgn](https://github.com/Issa-Mgn)  
-**Site :** [issa-migan.dev](https://portfoliov2-two-henna.vercel.app)
+**Site :** [https://portfoliov2-two-henna.vercel.app/](https://portfoliov2-two-henna.vercel.app)
 
 ---
 
