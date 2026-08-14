@@ -57,7 +57,7 @@ Chaque push sur `main` redéploie automatiquement.
 **Email :** [miganissa334@gmail.com](mailto:miganissa334@gmail.com)  
 **WhatsApp :** [+229 01 56 10 34 58](https://wa.me/2290156103458)  
 **GitHub :** [github.com/Issa-Mgn](https://github.com/Issa-Mgn)  
-**Site :** [issa-migan.dev](https://issa-migan.dev)
+**Site :** [issa-migan.dev](https://portfoliov2-two-henna.vercel.app)
 
 ---
 
